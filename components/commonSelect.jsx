@@ -3,10 +3,11 @@ import React from "react";
 const CommonSelect = ({ title, setText, value }) => {
     function handleSelect(event) {
         setText(event.target.value)
+        console.log(event.target.value)
     }
     return (
         <div className="w-full flex flex-col gap-1">
-            <p className="text-lg text-white font-bold">{title}</p>
+            <p className="text-lg text-white font-bold capitalize animate-fading transition-all duration-150">{title}</p>
             <select
                 defaultValue={""}
                 onChange={handleSelect}
@@ -14,7 +15,7 @@ const CommonSelect = ({ title, setText, value }) => {
             >
                 {value.map((ele, index) => {
                     return (
-                        <option key={index}>{ele}</option>
+                        <option key={index} value={ele.type} >{ele.name}</option>
                     )
                 })}
             </select>

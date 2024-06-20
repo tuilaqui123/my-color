@@ -22,14 +22,14 @@ function ColorBox({ value, delay }) {
         >
             <div className='relative flex items-center justify-center group cursor-pointer'>
                 <div
-                    style={{ backgroundColor: value.hex.value }}
+                    style={{ backgroundColor: value?.hex?.value }}
                     className="w-full h-[350px] shadow-lg shawdow-white group-hover:brightness-[105%] duration-150">
                 </div>
                 <p
-                    style={{ color: value.contrast.value }}
+                    style={{ color: value?.contrast?.value }}
                     className='absolute opacity-0 group-hover:opacity-100 group-hover:text-xl duration-150'
                 >
-                    {value.hex.value}
+                    {value?.hex?.value}
                 </p>
             </div>
         </div>

@@ -1,0 +1,7 @@
+page
+    - home
+    - color
+    -template ? 
+feature 
+    - light ? dark theme
+    - language : Eng, Vie

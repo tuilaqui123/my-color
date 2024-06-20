@@ -6,7 +6,7 @@ const CommonInput = ({ tilte, placeholder, text, setText, type }) => {
     }
     return (
         <div className="w-full flex flex-col gap-1">
-            <p className="text-lg text-white font-bold">{tilte}</p>
+            <p className="text-lg text-white font-bold capitalize animate-fading transition-all duration-150">{tilte}</p>
             <input
                 type={type}
                 value={text}

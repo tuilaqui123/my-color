@@ -1,0 +1,4 @@
+công nghệ
+    - nextjs
+    - api: https://www.thecolorapi.com/
+    - tailwind css
