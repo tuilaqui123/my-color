@@ -11,17 +11,14 @@ import languageData from '@/data/language';
 
 function Header() {
     const [theme, setTheme] = useState(true)
+    const [language, setLanguage] = useState()
     const locale = useParams()
     const localizedData = getDataForLocales(locale.lang);
+
     const langData = languageData;
 
     const router = useRouter()
     const pathname = usePathname()
-
-    const changeLanguage = (link) => {
-        router.push("/" + link + pathname.substring(("/" + locale.lang).length))
-
-    };
 
     useEffect(() => {
         if (localStorage.theme === 'dark' ||
@@ -32,7 +29,15 @@ function Header() {
             document.documentElement.classList.remove('dark');
             setTheme(false);
         }
+
     }, []);
+
+    const changeLanguage = (link) => {
+        localStorage.setItem("language", link)
+        console.log(localStorage.getItem("language"))
+        router.push("/" + link + pathname.substring(("/" + locale.lang).length))
+    };
+
 
     function toggleTheme() {
         if (theme) {
@@ -42,7 +47,6 @@ function Header() {
             document.documentElement.classList.add('dark');
             localStorage.theme = 'dark';
         }
-        // setIsDarkMode(!isDarkMode);
         setTheme(!theme)
     }
 
@@ -66,6 +70,7 @@ function Header() {
                 })}
                 <div className='flex flex-row items-center gap-8'>
                     <select
+                        value={localStorage.getItem("language") || 'vi'}
                         className='p-2 px-4 rounded-lg cursor-pointer border border-black dark:border-0'
                         onChange={(e) => changeLanguage(e.target.value)} // Use onChange event
                     >
