@@ -5,3 +5,4 @@ page
 feature 
     - light ? dark theme
     - language : Eng, Vie
+    - lưu dữ liệu vào local

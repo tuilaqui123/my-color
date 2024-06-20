@@ -7,11 +7,11 @@ const CommonSelect = ({ title, setText, value }) => {
     }
     return (
         <div className="w-full flex flex-col gap-1">
-            <p className="text-lg text-white font-bold capitalize animate-fading transition-all duration-150">{title}</p>
+            <p className="text-lg dark:text-white text-black font-bold capitalize animate-fading transition-all duration-150">{title}</p>
             <select
                 defaultValue={""}
                 onChange={handleSelect}
-                className="w-full pl-3 h-[45px] text-[#3e3e3e] border border-[#3e3e3e] rounded-lg focus:outline-none capitalize"
+                className="w-full pl-3 h-[45px] shadow-md text-[#3e3e3e] border border-[#3e3e3e] rounded-lg focus:outline-none capitalize"
             >
                 {value.map((ele, index) => {
                     return (

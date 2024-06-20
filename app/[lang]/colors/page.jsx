@@ -18,18 +18,6 @@ function Colors() {
     const [hex, setHex] = useState("F3F3F3")
     const [mode, setMode] = useState("monochrome")
     const [count, setCount] = useState(5)
-    console.log(localizedData.colors.colorsMode)
-
-    const modeList = [
-        "monochrome",
-        "monochrome-dark",
-        "monochrome-light",
-        "analogic",
-        "complement",
-        "analogic-complement",
-        "triad",
-        "quad",
-    ]
 
     function getRandomColor() {
         // Generate a random number between 0 and 16777215 (FFFFFF in hexadecimal)
@@ -70,7 +58,7 @@ function Colors() {
                 />
                 <button
                     onClick={getRandomColor}
-                    className='hover:bg-blue-500 duration-150 flex flex-row items-center justify-center gap-3 bg-white w-2/3 h-[45px] rounded-full'
+                    className='hover:bg-blue-500 shadow-xl border dark:border-0 duration-150 flex flex-row items-center justify-center gap-3 bg-white w-2/3 h-[45px] rounded-full'
                 >
                     <FaShuffle />
                     <p className='capitalize animate-fading transition-all duration-150'>{localizedData.colors.btnrandom}</p>
